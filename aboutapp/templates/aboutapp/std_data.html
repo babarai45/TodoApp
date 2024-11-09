@@ -1,0 +1,45 @@
+<h1>Student Data</h1>
+
+
+<table border="1">
+    <tr>
+        <th>Student ID</th>
+        <th>Student FName</th>
+        <th>Student LName</th>
+        <th>Student Email</th>
+        <th>Student Phone</th>
+        <th>Student Address</th>
+        <th>Student City</th>
+        <th>Student State</th>
+    </tr>
+    {% for student in std %}
+
+    <tr>
+        <td>{{ student.id}}</td>
+        <td>{{ student.fname }}</td>
+        <td>{{ student.lname }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.phone }}</td>
+        <td>{{ student.address }}</td>
+        <td>{{ student.city }}</td>
+        <td>{{ student.state }}</td>
+        <td>{{ student.course }}</td>
+        <td>{{ student.fee }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% comment %} horizentel line {% endcomment %}
+
+<hr>
+<hr>
+{% comment %}  post data by user{% endcomment %}
+
+<form method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+</form>

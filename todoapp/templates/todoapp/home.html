@@ -1,0 +1,19 @@
+<hx:ext id="todo-list" hx-target="#todo-list" hx-get="/todos/">
+    <ul>
+        <hx:foreach each="todo in todos">
+            <li>
+                <hx:if test="todo.completed">
+                    <s>{{ todo.text }}</s>
+                <hx:else>
+                    {{ todo.text }}
+                </hx:else>
+                <a href="/complete/{{ todo.id }}">Complete</a>
+            </li>
+        </hx:foreach>
+    </ul>
+</hx:ext>
+
+<form hx-post="/add_todo/" hx-target="#todo-list">
+    <input type="text" name="text" placeholder="Add a new task">
+    <button type="submit">Add</button>
+</form>

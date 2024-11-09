@@ -1,0 +1,36 @@
+
+<h1>Teacher Data</h1>
+
+<table border="1">
+    <tr>
+        <th>Teacher ID</th>
+        <th>Teacher FName</th>
+        <th>Teacher LName</th>
+        <th>Teacher Email</th>
+        <th>Teacher Phone</th>
+        <th>Teacher Address</th>
+        <th>Teacher City</th>
+        <th>Teacher State</th>
+        <th>Subject</th>
+        <th>Salary</th>
+        <th>Experience</th>
+        <th>Qualification</th>
+
+    </tr>
+    {% for teacher in td %}
+    <tr>
+        <td>{{ teacher.id }}</td>
+        <td>{{ teacher.fname }}</td>
+        <td>{{ teacher.lname }}</td>
+        <td>{{ teacher.email }}</td>
+        <td>{{ teacher.phone }}</td>
+        <td>{{ teacher.address }}</td>
+        <td>{{ teacher.city }}</td>
+        <td>{{ teacher.state }}</td>
+        <td>{{ teacher.subject }}</td>
+        <td>{{ teacher.salary }}</td>
+        <td>{{ teacher.experience }}</td>
+        <td>{{ teacher.qualification }}</td>
+    </tr>
+    {% endfor %}
+</table>
